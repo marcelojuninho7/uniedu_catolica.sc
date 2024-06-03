@@ -35,8 +35,18 @@
         <h4>
             <p>Remover acesso:</p>
             <p>Email do aluno <input type="email" name="email" placeholder="@catolicasc.edu.br"></p>
-            <p><button>Remover</button></p>
+            
+            <p>
+                <label for="textao">Motivo da exclusão:</label>
+            </p>
+            <p>
+                <textarea name="textao" id="textao"></textarea>
+            </p>
+            <p>
+                <button type="button" onclick="confirm('Confirma a remoção do acesso do aluno?')">Remover</button>
+            </p>
         </h4>
+
         <h4>
             <a href="/disciplinas.html">Voltar para a página inicial</a>
         </h4>
@@ -44,9 +54,11 @@
     </body>
 
     <footer>
-        <p>Sobre:</p>
-        <p>Esse é um projeto de estudante - Em progresso</p>
-        <p>Centro Universitário Católica de Santa Catarina - Joinville</p>
+        <div class="rodapé">
+            <p>Sobre:</p>
+            <p>Esse é um projeto de estudante - Em progresso</p>
+            <p>Centro Universitário Católica de Santa Catarina - Joinville</p>
+        </div>
     </footer>
 
 </html>
