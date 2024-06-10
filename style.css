@@ -9,9 +9,11 @@ body{
     font-weight: 500;
 }
 
-footer{
-    text-align: center;
+.tabeladisciplinas{
+    margin:auto;
+    width: 75% !important;margin: auto;
 }
+
 
 ul {
     text-align: center;
