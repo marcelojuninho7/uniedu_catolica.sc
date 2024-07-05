@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="../css/signin.css">
+        <title>Projeto UNIEDU - Signin</title>
+    </head>
+
+    <header>
+        <h1>
+            <strong>Uniedu -  Engenharia Mecânica</strong>
+        </h1>
+    </header>
+
+    <body>
+        <h2>
+            Site de apoio para disciplinas de Engenharia
+        </h2>
+        
+        <div class="container">
+            <div class='card'>
+                <h1> Entrar </h1>
+                
+                <div id='msgError'></div>
+                
+                <div class='label-float'>
+                    <input type='text' id='usuario' paceholder='' required>
+                    <label id='userLabel' for='usuario'>Usuario</label>
+                </div>
+                
+                <div class='label-float'>
+                    <input type='password' id='senha' paceholder='' required>
+                    <label id='senhaLabel' for='senha'>Senha</label>
+                    <i class="fa fa-eye" aria-hidden="true"></i>
+                </div>
+                
+                <div class='justify-center'>
+                    <button onclick='entrar()'>Entrar</button>
+                </div>
+                
+                <div class='justify-center'>
+                    <hr>
+                </div>
+                <p>
+                    Não possui acesso?
+                    <a href="./signup.html">Solicitar acesso</a>
+                </p>
+            </div>
+        </div>
+        <script src="../js/signin.js"></script>
+
+    </body>
+
+    <footer>
+        <div class="rodapé">
+            <p>Sobre:</p>
+            <p>Esse é um projeto de estudante - Em progresso</p>
+            <p>Centro Universitário Católica de Santa Catarina - Joinville</p>
+        </div>
+    </footer>
+
+</html>
