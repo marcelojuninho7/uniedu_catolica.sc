@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carta de Controle e MR</title>
+  <link rel="stylesheet" href="../js/cartacontrole.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>Carta de Controle e MR</h1>
+    <div class="form">
+      <label for="data-input">Insira os valores separados por vírgula:</label>
+      <input type="text" id="data-input" placeholder="Exemplo: 5, 7, 8, 6, 9">
+      <button onclick="generateCharts()">Gerar Gráficos</button>
+    </div>
+    
+    <h2>Gráfico de Carta de Controle</h2>
+    <canvas id="controlChart" width="400" height="200"></canvas>
+
+    <h2>Gráfico de Amplitude Móvel (MR)</h2>
+    <canvas id="mrChart" width="400" height="200"></canvas>
+  </div>
+
+  <script src="../js/cartacontrole.js"></script>
+</body>
+</html>
