@@ -3,26 +3,35 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Carta de Controle e MR</title>
-  <link rel="stylesheet" href="../js/cartacontrole.css">
+  <title>Gráficos de Controle</title>
+  <link rel="stylesheet" href="../css/cartacontrole.css">
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
   <div class="container">
-    <h1>Carta de Controle e MR</h1>
-    <div class="form">
-      <label for="data-input">Insira os valores separados por vírgula:</label>
-      <input type="text" id="data-input" placeholder="Exemplo: 5, 7, 8, 6, 9">
-      <button onclick="generateCharts()">Gerar Gráficos</button>
-    </div>
-    
-    <h2>Gráfico de Carta de Controle</h2>
+    <h1>Gráficos de Controle</h1>
+    <h2>Entrada de Dados</h2>
+    <label for="data-input">Cole os dados diretamente do Excel (uma coluna ou várias linhas):</label>
+    <textarea id="data-input" rows="10" cols="50" placeholder="Exemplo:
+5
+7
+8
+6
+9"></textarea>
+    <button onclick="generateCharts()">Gerar Gráficos</button>
+
+    <h2>Carta I - Valores Individuais</h2>
     <canvas id="controlChart" width="400" height="200"></canvas>
 
-    <h2>Gráfico de Amplitude Móvel (MR)</h2>
+    <h2>Carta MR - Amplitude móvel</h2>
     <canvas id="mrChart" width="400" height="200"></canvas>
-  </div>
 
+    <h2>Índice de Capacidade de Processo (Cp e Cpk)</h2>
+    <p id="capacityMetrics"></p>
+        <strong>Cp:</strong> <span id="cp-value">-</span> | 
+        <strong>Cpk:</strong> <span id="cpk-value">-</span>
+    <canvas id="cpChart" width="400" height="200"></canvas>
+  </div>
   <script src="../js/cartacontrole.js"></script>
 </body>
 </html>
