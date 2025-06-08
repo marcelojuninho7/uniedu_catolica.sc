@@ -1,11 +1,37 @@
 /* styles.css */
 .container {
-    text-align: center;
-    max-width: 600px;
-    margin: 0 auto;
-  }
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+  font-family: "Montserrat", Sans-serif;
+}
+
+canvas {
+  margin: 20px 0;
+}
   
-  canvas {
-    margin: 20px 0;
-  }
-  
+
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center; 
+  bottom: 0;
+  width: 100%;
+  background-color: #1F2344;
+  font-family: "Montserrat", Sans-serif;
+}
+
+.rodapé {
+    padding: 0px 0px 0px 25px;
+    border-style: solid;
+    border-width: 4px 0px 0px 0px;
+    border-color: #EFCB0C;
+}
+
+header{
+  text-align: center;
+  color: #fff;
+  background-color: #1F2344;
+  width: 100%;
+  font-family: "Montserrat", Sans-serif;
+}

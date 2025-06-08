@@ -7,31 +7,50 @@
   <link rel="stylesheet" href="../css/cartacontrole.css">
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
-<body>
-  <div class="container">
-    <h1>Gráficos de Controle</h1>
-    <h2>Entrada de Dados</h2>
-    <label for="data-input">Cole os dados diretamente do Excel (uma coluna ou várias linhas):</label>
-    <textarea id="data-input" rows="10" cols="50" placeholder="Exemplo:
-5
-7
-8
-6
-9"></textarea>
-    <button onclick="generateCharts()">Gerar Gráficos</button>
 
-    <h2>Carta I - Valores Individuais</h2>
-    <canvas id="controlChart" width="400" height="200"></canvas>
+  <header>
+        <h1>
+            <strong>Uniedu -  Engenharia Mecânica</strong>
+        </h1>
+  </header>
 
-    <h2>Carta MR - Amplitude móvel</h2>
-    <canvas id="mrChart" width="400" height="200"></canvas>
+  <body>
+    <div class="container">
+      <h1>Gráficos de Controle</h1>
+      <h2>Entrada de Dados</h2>
+      <label for="data-input">Cole os dados diretamente do Excel (uma coluna ou várias linhas):</label>
+      <textarea id="data-input" rows="10" cols="50" placeholder="Exemplo:
+      5
+      6
+      7
+      8
+      9">
+      </textarea>
 
-    <h2>Índice de Capacidade de Processo (Cp e Cpk)</h2>
-    <p id="capacityMetrics"></p>
-        <strong>Cp:</strong> <span id="cp-value">-</span> | 
-        <strong>Cpk:</strong> <span id="cpk-value">-</span>
-    <canvas id="cpChart" width="400" height="200"></canvas>
-  </div>
-  <script src="../js/cartacontrole.js"></script>
-</body>
-</html>
+      <h2>
+        <button onclick="generateCharts()">Gerar Gráficos</button>
+      </h2>
+
+      <h2>Carta I - Valores Individuais</h2>
+      <canvas id="controlChart" width="400" height="200"></canvas>
+
+      <h2>Carta MR - Amplitude móvel</h2>
+      <canvas id="mrChart" width="400" height="200"></canvas>
+
+      <h2>Índice de Capacidade de Processo (Cp e Cpk)</h2>
+      <p id="capacityMetrics"></p>
+          <strong>Cp:</strong> <span id="cp-value">-</span> | 
+          <strong>Cpk:</strong> <span id="cpk-value">-</span>
+      <canvas id="cpChart" width="400" height="200"></canvas>
+    </div>
+    <script src="../js/cartacontrole.js"></script>
+  </body>
+    
+  <footer>
+    <div class="rodapé">
+        <p>Sobre:</p>
+        <p>Esse é um projeto de estudante - Em progresso</p>
+        <p>Centro Universitário Católica de Santa Catarina - Joinville</p>
+    </div>
+  </footer>
+  </html>
