@@ -6,15 +6,7 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/
-            bootstrap/3.3.7/css/bootstrap.min.css" 
-            integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" 
-            crossorigin="anonymous">
-        <!-- Bootstrap JavaScript -->
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" 
-            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" 
-            crossorigin="anonymous"></script>
+
         <title>Projeto UNIEDU - Vibrações</title>
     </head>
 
@@ -31,9 +23,34 @@
         <h3>
             Ánalise de Tensões
         </h3>
-        <h4>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum sint, consequuntur tenetur ad dicta reiciendis. Libero illum, sunt natus quas maxime asperiores, consectetur voluptas harum totam possimus nostrum corrupti doloremque!</p>
-        </h4>
+
+        <h1>Configuração de carga axial e suportes</h1>
+
+        <div class="form-section">
+            <label>Comprimento da barra (m):</label>
+            <input type="number" id="barLength" value="5">
+
+            <label>Posição da força (m da esquerda):</label>
+            <input type="number" id="forcePos" value="2">
+
+            <label>Magnitude de força (N):</label>
+            <input type="number" id="forceMag" value="1000">
+
+            <label>Tipo de suporte:</label>
+            <select id="supportType">
+                <option value="fixed">Fixed</option>
+                <option value="pinned">Pinned</option>
+                <option value="roller">Roller</option>
+
+            </select>
+
+            <button id="drawBar">Ilustrar</button>
+            <script src="../js/tensoes.js"></script>
+
+        </div>
+        
+        <div class="bar-visual" id="barVisual"></div>
+
         <h4>
             <a href="./index.html">Voltar para a página de disciplinas</a>
         </h4>

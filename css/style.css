@@ -14,8 +14,11 @@ body{
 }
 
 .tabeladisciplinas{
-    margin:auto;
-    width: 75% !important;margin: auto;
+    text-align: center;
+    margin: 0 auto;
+    width: 0 auto !important;
+    margin: 0 auto;
+    display: inline-table;
 }
 
 

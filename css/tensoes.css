@@ -29,3 +29,22 @@ footer {
     border-width: 4px 0px 0px 0px;
     border-color: #EFCB0C;
 }
+
+.form-section {
+    margin: 20px auto;
+    width: 80%;
+    max-width: 500px;
+    text-align: left;
+}
+input, select {
+    width: 100%;
+    padding: 8px;
+    margin-top: 8px;
+}
+.bar-visual {
+    margin-top: 40px;
+    border: 2px solid black;
+    height: 30px;
+    position: relative;
+    background-color: #f0f0f0;
+}
