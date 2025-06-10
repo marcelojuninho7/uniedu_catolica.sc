@@ -26,30 +26,27 @@
 
         <h1>Configuração de carga axial e suportes</h1>
 
-        <div class="form-section">
-            <label>Comprimento da barra (m):</label>
-            <input type="number" id="barLength" value="5">
+        <div class="container">
+            <h2>Calculadora de Viga</h2>
+            <label for="comprimento">Comprimento da Viga (m):</label>
+            <input type="number" id="comprimento" value="3" min="1" step="0.1" />
 
-            <label>Posição da força (m da esquerda):</label>
-            <input type="number" id="forcePos" value="2">
+            <label for="carga">Carga Pontual (N):</label>
+            <input type="number" id="carga" value="10000" min="0" step="100" />
 
-            <label>Magnitude de força (N):</label>
-            <input type="number" id="forceMag" value="1000">
+            <label for="largura">Largura da Seção (mm):</label>
+            <input type="number" id="largura" value="100" min="1" />
 
-            <label>Tipo de suporte:</label>
-            <select id="supportType">
-                <option value="fixed">Fixed</option>
-                <option value="pinned">Pinned</option>
-                <option value="roller">Roller</option>
+            <label for="altura">Altura da Seção (mm):</label>
+            <input type="number" id="altura" value="200" min="1" />
 
-            </select>
+            <button onclick="calcularTudo()">Calcular e Desenhar</button>
 
-            <button id="drawBar">Ilustrar</button>
-            <script src="../js/tensoes.js"></script>
-
+            <div id="result" class="result"></div>
+            <canvas id="beamCanvas" width="800" height="200" style="margin-top:20px; border:1px solid #ccc;"></canvas>
         </div>
-        
-        <div class="bar-visual" id="barVisual"></div>
+
+        <script src="../js/tensoes.js"></script>
 
         <h4>
             <a href="./index.html">Voltar para a página de disciplinas</a>

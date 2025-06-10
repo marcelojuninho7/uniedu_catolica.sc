@@ -35,3 +35,10 @@ header{
   width: 100%;
   font-family: "Montserrat", Sans-serif;
 }
+
+body{
+    text-align: center;
+    font-family: "Montserrat", Sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+}
