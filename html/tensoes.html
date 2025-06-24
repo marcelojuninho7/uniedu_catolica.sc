@@ -6,6 +6,7 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
         <title>Projeto UNIEDU - Vibrações</title>
     </head>
@@ -34,6 +35,9 @@
             <label for="carga">Carga Pontual (N):</label>
             <input type="number" id="carga" value="10000" min="0" step="100" />
 
+            <label for="posicaoCarga">Posição da Carga (m):</label>
+            <input type="number" id="posicaoCarga" value="1.5" min="0" step="0.1">
+
             <label for="largura">Largura da Seção (mm):</label>
             <input type="number" id="largura" value="100" min="1" />
 
@@ -44,6 +48,10 @@
 
             <div id="result" class="result"></div>
             <canvas id="beamCanvas" width="800" height="200" style="margin-top:20px; border:1px solid #ccc;"></canvas>
+
+            <div id="tabelaResultados"></div>
+            <canvas id="graficoEsforcos" width="600" height="300" style="margin-top: 40px;"></canvas>
+
         </div>
 
         <script src="../js/tensoes.js"></script>

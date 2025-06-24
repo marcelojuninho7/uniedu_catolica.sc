@@ -3,12 +3,12 @@ header{
     color: #fff;
     background-color: #1F2344;
     width: 100%;
-    font-family: "Montserrat", Sans-serif;
+    font-family: 'Nunito Sans', sans-serif;
 }
 
 body{
     text-align: center;
-    font-family: "Montserrat", Sans-serif;
+    font-family: 'Nunito Sans', sans-serif;
     font-size: 16px;
     font-weight: 500;
 }
