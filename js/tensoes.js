@@ -38,6 +38,7 @@ function calcularTudo() {
     Reação à direita: ${R2.toFixed(2)} N<br>
     Momento Fletor Máximo: ${Mmax.toFixed(2)} Nm<br>
     Força Cortante Máxima: ${Vmax.toFixed(2)} N<br>
+    Momento de Inércia: ${I.toFixed(10)} m⁴<br>
     Tensão Normal Máxima: ${(sigma_max / 1e6).toFixed(2)} MPa<br>
     Tensão de Cisalhamento Máxima: ${(tau_max / 1e6).toFixed(2)} MPa`;
 
@@ -111,7 +112,7 @@ function drawBeam(L, P, a) {
 
   // Texto da carga
   ctx.font = '16px Arial';
-  ctx.fillText(`${P.toFixed(1)} kN`, cargaX - 25, beamY - arrowHeight - 10);
+  ctx.fillText(`${P.toFixed(3)} kN`, cargaX - 25, beamY - arrowHeight - 10);
 
   // Texto do comprimento da viga
   ctx.fillStyle = 'black';
@@ -121,7 +122,7 @@ function drawBeam(L, P, a) {
 }
 
 function gerarTabelaEsforcos(L, P, Vmax) {
-  const passo = 0.5;
+  const passo = 1; // intervalo x tabela
   const tabelaDiv = document.getElementById('tabelaResultados');
   tabelaDiv.innerHTML = ''; // Limpa antes de recriar
 
@@ -165,7 +166,7 @@ function gerarTabelaEsforcos(L, P, Vmax) {
 }
 
 function gerarGraficoEsforcos(L, P, Vmax) {
-  const passo = 0.5;
+  const passo = 1; // intervalo x tabela
   const labels = [];
   const dadosCortante = [];
   const dadosAxial = [];
