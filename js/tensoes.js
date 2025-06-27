@@ -34,16 +34,16 @@ function calcularTudo() {
 
   document.getElementById('result').innerHTML = `
     <strong>Resultados:</strong><br>
-    Reação à esquerda: ${R1.toFixed(2)} N<br>
-    Reação à direita: ${R2.toFixed(2)} N<br>
-    Momento Fletor Máximo: ${Mmax.toFixed(2)} Nm<br>
-    Força Cortante Máxima: ${Vmax.toFixed(2)} N<br>
-    Momento de Inércia: ${I.toFixed(10)} m⁴<br>
-    Tensão Normal Máxima: ${(sigma_max / 1e6).toFixed(2)} MPa<br>
-    Tensão de Cisalhamento Máxima: ${(tau_max / 1e6).toFixed(2)} MPa`;
+    Reação à esquerda: ${R1.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })} N<br>
+    Reação à direita: ${R2.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })} N<br>
+    Momento Fletor Máximo: ${Mmax.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })} Nm<br>
+    Força Cortante Máxima: ${Vmax.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })} N<br>
+    Momento de Inércia: ${I.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })} m⁴<br>
+    Tensão Normal Máxima: ${(sigma_max / 1e6).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })} MPa<br>
+    Tensão de Cisalhamento Máxima: ${(tau_max / 1e6).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })} MPa`;
 
   // Desenha a viga com carga no centro
-  drawBeam(L, P / 1000, a); // Passa P em kN para o desenho
+  drawBeam(L, P, a);
 
   // Gera a tabela dinâmica
   gerarTabelaEsforcos(L, P, Vmax);
@@ -112,7 +112,9 @@ function drawBeam(L, P, a) {
 
   // Texto da carga
   ctx.font = '16px Arial';
-  ctx.fillText(`${P.toFixed(3)} kN`, cargaX - 25, beamY - arrowHeight - 10);
+  const P_txt = (P).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+  ctx.fillText(`${P_txt} N`, cargaX - 25, beamY - arrowHeight - 10);
+  //ctx.fillText(`${P.toFixed(3)} N`, cargaX - 25, beamY - arrowHeight - 10);
 
   // Texto do comprimento da viga
   ctx.fillStyle = 'black';
@@ -122,6 +124,7 @@ function drawBeam(L, P, a) {
 }
 
 function gerarTabelaEsforcos(L, P, Vmax) {
+  const a = parseFloat(document.getElementById('posicaoCarga').value); // posição da carga
   const passo = 1; // intervalo x tabela
   const tabelaDiv = document.getElementById('tabelaResultados');
   tabelaDiv.innerHTML = ''; // Limpa antes de recriar
@@ -145,15 +148,45 @@ function gerarTabelaEsforcos(L, P, Vmax) {
     cabecalho.appendChild(th);
   });
 
+  // Linha x = 0
+  const linha0 = tabela.insertRow();
+  ['0.00', '0.00', '0', '0.00'].forEach(valor => {
+    const td = document.createElement('td');
+    td.textContent = valor;
+    td.style.padding = '6px';
+    td.style.border = '1px solid #ccc';
+    linha0.appendChild(td);
+  });
+  
   // Linhas de dados
-  for (let x = 0; x <= L + 0.001; x += passo) {
+  // Loop só de x = passo até L
+  for (let x = passo; x <= L + 0.001; x += passo) {
     const linha = tabela.insertRow();
 
-    const cortante = Vmax.toFixed(2); // usando Vmax calculado
+    let cortante, momento;
     const axial = 0;
-    const momento = -((P * x) * x / 2).toFixed(2); // M = -(P * x) * x / 2
+    
+    //antes da carga
+    if (x < a) {
+      cortante = -(P / 2);
+      momento = (P / 2) * x;
+    }
+    //momento da carga
+    else if (Math.abs(x - a) < 0.001) {
+      cortante = -(P / 2);
+      momento = (P / 2) * a;
+    }
+    //depois da carga
+    else {
+      cortante = (P / 2);
+      momento = (P / 2) * x - (P * (x - a));
+    }
+    
+    //const cortante = Vmax.toFixed(2); // usando Vmax calculado
+    //const axial = 0;
+    //const momento = -((P * x) * x / 2).toFixed(2); // M = -(P * x) * x / 2
 
-    [x.toFixed(2), cortante, axial, momento].forEach(valor => {
+    [x.toFixed(2), cortante.toFixed(2), axial, momento.toFixed(2)].forEach(valor => {
       const td = document.createElement('td');
       td.textContent = valor;
       td.style.padding = '6px';
@@ -166,18 +199,45 @@ function gerarTabelaEsforcos(L, P, Vmax) {
 }
 
 function gerarGraficoEsforcos(L, P, Vmax) {
+  const a = parseFloat(document.getElementById('posicaoCarga').value);
   const passo = 1; // intervalo x tabela
-  const labels = [];
-  const dadosCortante = [];
-  const dadosAxial = [];
-  const dadosMomento = [];
+  const labels = ['0.00'];
+  const dadosCortante = [0];
+  const dadosAxial = [0];
+  const dadosMomento = [0];
 
-  for (let x = 0; x <= L + 0.001; x += passo) {
+  for (let x = passo; x <= L + 0.001; x += passo) {
     labels.push(x.toFixed(2));
-    dadosCortante.push(Vmax);
-    dadosAxial.push(0);
-    dadosMomento.push(-((P * x * x) / 2));
+
+    let cortante, momento;
+    const axial = 0;
+
+
+    //antes da carga
+    if (x < a) {
+      cortante = -(P / 2);
+      momento = (P / 2) * x;
+    } 
+    //momento da carga
+    else if (Math.abs(x - a) < 0.001) {
+      cortante = -(P / 2);
+      momento = (P / 2) * a;
+    } 
+    //depois da carga
+    else {
+      cortante = (P / 2);
+      momento = (P / 2) * x - (P * (x - a));
+    }
+    dadosCortante.push(cortante);
+    dadosAxial.push(axial);
+    dadosMomento.push(momento);
   }
+  //for (let x = 0; x <= L + 0.001; x += passo) {
+  //  labels.push(x.toFixed(2));
+  //  dadosCortante.push(Vmax);
+  //  dadosAxial.push(0);
+  //  dadosMomento.push(-((P * x * x) / 2));
+  //}
 
   const ctxGrafico = document.getElementById('graficoEsforcos').getContext('2d');
 
