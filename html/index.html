@@ -2,7 +2,7 @@
 <html lang="pt-br">
     
     <head>
-        <link rel="stylesheet" href="../css/style.css">
+        <link rel="stylesheet" href="../css/geral.css">
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,74 +17,76 @@
             crossorigin="anonymous"></script>
         <title>Projeto UNIEDU - Disciplinas</title>
     </head>
-
-    <header>
-        <h1>
-            <strong>Uniedu -  Engenharia Mecânica</strong>
-        </h1>
-    </header>
     
     <body>
-        <h1 id="logado"></h1>
-        <h2>   
-            Site de apoio para disciplinas de Engenharia
-        </h2>
-        <h3>
-            Selecionar disciplinas
-        </h3>
-        
-        <div class="tabeladisciplinas">
-            <table class="table table-striped">
-                <caption>Disciplinas</caption>
-                <thead class="table-light">
-                <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Matéria</th>
-                    <th scope="col">Professor</th>
-                    <th scope="col">Semestre</th>
-                </tr>
-                </thead>
-                <tbody class="table-group-divider">
-                <tr>
-                    <th scope="row">1</th>
-                    <td><a href="./vibracoes.html">Vibrações</a></td>
-                    <td>Valdeon</td>
-                    <td>9º Semestre</td>
-                </tr>
-                <tr>
-                    <th scope="row">2</th>
-                    <td><a href="./cartacontrole.html">Carta de Controle</a></td>
-                    <td>Valdeon</td>
-                    <td>7º Semestre</td>
-                </tr>
-                <tr>
-                    <th scope="row">3</th>
-                    <td><a href="./tensoes.html">Tensões</a></td>
-                    <td>Valdeon</td>
-                    <td>5º Semestre</td>
-                </tr>
-                </tbody>
-            </table>
 
+        <!--CABEÇALHO-->
+        <header>
+            <h1>
+                <strong>Uniedu -  Engenharia Mecânica</strong>
+            </h1>
+        </header>
+
+        <!--CONTEÚDO PRINCIPAL-->
+        <main>
+            <h1 id="logado"></h1>
+            <h2>   
+                Site de apoio para disciplinas de Engenharia
+            </h2>
+            <h3>
+                Selecionar disciplinas
+            </h3>
             
-        </div>
-        <h4>
-            <a href="./admin.html">Acesso Professor</a>
-        </h4>
-        <h4>
-            <button onclick="sair()"> Sair </button>
-        </h4>
+            <div class="tabeladisciplinas">
+                <table class="table table-striped">
+                    <caption>Disciplinas</caption>
+                    <thead class="table-light">
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Matéria</th>
+                        <th scope="col">Professor</th>
+                        <th scope="col">Semestre</th>
+                    </tr>
+                    </thead>
+                    <tbody class="table-group-divider">
+                    <tr>
+                        <th scope="row">1</th>
+                        <td><a href="./vibracoes.html">Vibrações</a></td>
+                        <td>Valdeon</td>
+                        <td>9º Semestre</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">2</th>
+                        <td><a href="./cartacontrole.html">Carta de Controle</a></td>
+                        <td>Valdeon</td>
+                        <td>7º Semestre</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">3</th>
+                        <td><a href="./tensoes.html">Tensões</a></td>
+                        <td>Valdeon</td>
+                        <td>5º Semestre</td>
+                    </tr>
+                    </tbody>
+                </table> 
+            </div>
+            <h4>
+                <a href="./admin.html">Acesso Professor</a>
+            </h4>
+            <h4>
+                <button onclick="sair()"> Sair </button>
+            </h4>
 
-        <script src="../js/index.js"></script>
-
+            <script src="../js/index.js"></script>
+        </main>
+        
+        <!--RODAPÉ-->
+        <footer>
+            <div class="rodapé">
+                <p>Sobre:</p>
+                <p>Esse é um projeto de estudante - Em progresso</p>
+                <p>Centro Universitário Católica de Santa Catarina - Joinville</p>
+            </div>
+        </footer>
     </body>
-
-    <footer>
-        <div class="rodapé">
-            <p>Sobre:</p>
-            <p>Esse é um projeto de estudante - Em progresso</p>
-            <p>Centro Universitário Católica de Santa Catarina - Joinville</p>
-        </div>
-    </footer>
-
 </html>

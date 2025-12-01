@@ -2,7 +2,7 @@
 <html lang="pt-br">
     
     <head>
-        <link rel="stylesheet" href="../css/style.css">
+        <link rel="stylesheet" href="../css/styles.css">
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,95 +17,100 @@
             crossorigin="anonymous"></script>
         <title>Projeto UNIEDU - Admin</title>
     </head>
-
-    <header>
-        <h1>
-            <strong>Uniedu -  Engenharia Mecânica</strong>
-        </h1>
-    </header>
     
     <body>
-        <h2>
-            Site de apoio para disciplinas de Engenharia
-        </h2>
-        <h3>
-            Gerenciar cadastro de alunos
-        </h3>
-        <div class="tabeladisciplinas">
-            <table class="table table-striped">
-                <caption>Acesso Alunos</caption>
-                <thead class="table-light">
-                <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Aluno</th>
-                    <th scope="col">Curso</th>
-                    <th scope="col">Período</th>
-                    <th scope="col">Tipo de Acesso</th>
-                    <th scope="col">Prazo</th>
-                    <th scope="col">Email</th>
-                </tr>
-                </thead>
-                <tbody class="table-group-divider">
-                <tr>
-                    <th scope="row">1</th>
-                    <td>Marcelo Rossi Junior</td>
-                    <td>Eng. Mec.</td>
-                    <td>3º Sem.</td>
-                    <td>Representante</td>
-                    <td>05/07/2024</td>
-                    <td>marcelo.rossi@catolicasc.edu.br</td>
-                </tr>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>Aaaa Bbbb</td>
-                    <td>Eng. Civ.</td>
-                    <td>4º Sem.</td>
-                    <td>Aluno</td>
-                    <td>01/07/2024</td>
-                    <td>aaaa.bbbb@catolicasc.edu.br</td>
-                </tr>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>Cccc Dddd Eeee</td>
-                    <td>Eng. Mec.</td>
-                    <td>3º Sem.</td>
-                    <td>Aluno</td>
-                    <td>05/07/2024</td>
-                    <td>cccc.dddd@catolicasc.edu.br</td>
-                </tr>
-                </tbody>
-            </table>
 
-            
-        </div>
-
-        <h4>
-            <p>Remover acesso:</p>
-            <p>Email do aluno <input type="email" name="email" placeholder="@catolicasc.edu.br"></p>
-            
-            <p>
-                <label for="textao">Motivo da exclusão:</label>
-            </p>
-            <p>
-                <textarea name="textao" id="textao"></textarea>
-            </p>
-            <p>
-                <button type="button" onclick="confirm('Confirma a remoção do acesso do aluno?')">Remover</button>
-            </p>
-        </h4>
-
-        <h4>
-            <a href="./index.html">Voltar para a página de disciplinas</a>
-        </h4>
+        <!--CABEÇALHO-->
+        <header>
+            <h1>
+                <strong>Uniedu -  Engenharia Mecânica</strong>
+            </h1>
+        </header>
+        
+        <!--CONTEÚDO PRINCIPAL-->
+        <main>
+            <h2>
+                Site de apoio para disciplinas de Engenharia
+            </h2>
+            <h3>
+                Gerenciar cadastro de alunos
+            </h3>
+            <div class="tabeladisciplinas">
+                <table class="table table-striped">
+                    <caption>Acesso Alunos</caption>
+                    <thead class="table-light">
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Aluno</th>
+                        <th scope="col">Curso</th>
+                        <th scope="col">Período</th>
+                        <th scope="col">Tipo de Acesso</th>
+                        <th scope="col">Prazo</th>
+                        <th scope="col">Email</th>
+                    </tr>
+                    </thead>
+                    <tbody class="table-group-divider">
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Marcelo Rossi Junior</td>
+                        <td>Eng. Mec.</td>
+                        <td>3º Sem.</td>
+                        <td>Representante</td>
+                        <td>05/07/2024</td>
+                        <td>marcelo.rossi@catolicasc.edu.br</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Aaaa Bbbb</td>
+                        <td>Eng. Civ.</td>
+                        <td>4º Sem.</td>
+                        <td>Aluno</td>
+                        <td>01/07/2024</td>
+                        <td>aaaa.bbbb@catolicasc.edu.br</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Cccc Dddd Eeee</td>
+                        <td>Eng. Mec.</td>
+                        <td>3º Sem.</td>
+                        <td>Aluno</td>
+                        <td>05/07/2024</td>
+                        <td>cccc.dddd@catolicasc.edu.br</td>
+                    </tr>
+                    </tbody>
+                </table>
+    
+                
+            </div>
+    
+            <h4>
+                <p>Remover acesso:</p>
+                <p>Email do aluno <input type="email" name="email" placeholder="@catolicasc.edu.br"></p>
+                
+                <p>
+                    <label for="textao">Motivo da exclusão:</label>
+                </p>
+                <p>
+                    <textarea name="textao" id="textao"></textarea>
+                </p>
+                <p>
+                    <button type="button" onclick="confirm('Confirma a remoção do acesso do aluno?')">Remover</button>
+                </p>
+            </h4>
+    
+            <h4>
+                <a href="./index.html">Voltar para a página de disciplinas</a>
+            </h4>
+        </main>
+        
+        <!--RODAPÉ-->
+        <footer>
+            <div class="rodapé">
+                <p>Sobre:</p>
+                <p>Esse é um projeto de estudante - Em progresso</p>
+                <p>Centro Universitário Católica de Santa Catarina - Joinville</p>
+            </div>
+        </footer>
 
     </body>
-
-    <footer>
-        <div class="rodapé">
-            <p>Sobre:</p>
-            <p>Esse é um projeto de estudante - Em progresso</p>
-            <p>Centro Universitário Católica de Santa Catarina - Joinville</p>
-        </div>
-    </footer>
-
 </html>
