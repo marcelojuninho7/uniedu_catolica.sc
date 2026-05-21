@@ -34,9 +34,32 @@
             <h3>
                 Mecanismos Articulados - Posição, Velocidade e Aceleração
             </h3>
-            <h4>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum sint, consequuntur tenetur ad dicta reiciendis. Libero illum, sunt natus quas maxime asperiores, consectetur voluptas harum totam possimus nostrum corrupti doloremque!</p>
-            </h4>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <h4>Entradas do Mecanismo</h4>
+                        <label>Barra 1 (Fixa - O2O4):</label>
+                        <input type="number" id="l1" class="form-control" value="550">
+                        <label>Barra 2 (Manivela - O2A):</label>
+                        <input type="number" id="l2" class="form-control" value="300">
+                        <label>Barra 3 (Acoplador - AB):</label>
+                        <input type="number" id="l3" class="form-control" value="700">
+                        <label>Barra 4 (Seguinte - O4B):</label>
+                        <input type="number" id="l4" class="form-control" value="510">
+                        <label>Ângulo de Entrada (ψ):</label>
+                        <input type="number" id="psi" class="form-control" value="58">
+                        <label>Velocidade Angular (ω2):</label>
+                        <input type="number" id="omega2" class="form-control" value="10">
+                        <button onclick="calcularMecanismo()" class="btn btn-primary" style="margin-top:10px;">Calcular</button>
+                    </div>
+                    <div class="col-md-8" id="resultados">
+                        <h4>Resultados</h4>
+                        <div id="output">Clique em calcular para ver os resultados.</div>
+                    </div>
+                    <script src="../js/geogebra.js"></script>
+                </div>
+            </div>
+            <canvas id="canvasMecanismo" width="800" height="500" style="border:1px solid #000; background-color: #f9f9f9;"></canvas>
             <h4>
                 <a href="./index.html">Voltar para a página de disciplinas</a>
             </h4>
